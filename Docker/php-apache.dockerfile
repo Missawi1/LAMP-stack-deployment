@@ -4,13 +4,13 @@ LABEL "Project"="Lamp"
 LABEL "Author"="Awele"
 
 WORKDIR /var/www/html/
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y php libapache2-mod-php php8.2-mysql
+RUN docker-php-ext-install mysqli pdo pdo_mysql && \
+    docker-php-ext-enable mysqli
 
 COPY ../../Application/* /var/www/html/
 
-RUN chown www-data:www-data /var/www/html/submit.php
+RUN chown www-data:www-data /var/www/html/submit.php && \
+    a2enmod rewrite
 
 EXPOSE 80
 EXPOSE 443
