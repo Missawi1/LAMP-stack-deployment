@@ -6,7 +6,7 @@ LABEL "Author"="Awele"
 WORKDIR /var/www/html/
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y php libapache2-mod-php php-mysql
+    apt-get install -y php libapache2-mod-php php8.2-mysql
 
 COPY ../../Application/* /var/www/html/
 
