@@ -5,5 +5,4 @@ LABEL "Author"="Awele"
 ENV MYSQL_ROOT_PASSWORD="Password"
 ENV MYSQL_DATABASE="mydatabase"
 
-
-ADD ../Database/database_setup.sql docker-entrypoint-initdb.d/database_setup.sql
+ADD ../database_setup.sql docker-entrypoint-initdb.d/database_setup.sqlg
